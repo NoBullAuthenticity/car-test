@@ -1,0 +1,73 @@
+.aligned {
+    
+    bottom: 0;
+    right: 0;
+
+  }
+
+.buttontings{
+
+    margin-top: 2%;
+    vertical-align: bottom;
+}
+
+.footer{
+    background-color: 
+    #333333;
+
+}
+
+.topherotext{
+    margin-top: 60%;
+    margin-left: 5%;
+}
+
+.submitbutton{
+    background-color: white;
+    color: #e63946;
+    border: 10px solid #e63946; 
+}
+
+.submitbutton:hover {
+    background-color: #e63946; /* Green */
+    color: white;
+  }
+
+.bottomherotext{
+    margin-left: 5%;
+}
+
+.header{
+    background-color: 
+    #333333;
+
+}
+
+.footerbottom{
+    background-color: 
+    #2b2b2b;
+
+}
+
+.searchform{
+
+    background-color: 
+    #2b2b2b;  
+}
+
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+    position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+    background-color: 
+    #333333;
+  }
+  
+  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+  .sticky + .content {
+    padding-top: 60px;
+  }
+
+  
