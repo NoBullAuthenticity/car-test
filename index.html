@@ -9,7 +9,6 @@
       <meta http-equiv="author" content="caveman.eth">
       <meta name="keywords" content="html, css, web, design, sample, practice">
       <!-- These are META TAGS, they're used to describe the website, this information is read mainly by search engines like GOOGLE, YAHOO, ETC... -->	
-	<link rel="stylesheet" href="style.css">
 	<script src="http://localhost:8080/target/target-script-min.js#anonymous"></script>
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.2.2/dist/full.css" rel="stylesheet" type="text/css" />
@@ -25,7 +24,7 @@
     <div class="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
         <div class="flex items-center justify-between">
             <div>
-                <a class="text-2xl font-bold text-white transition-colors duration-200 transform dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300" href="#">TEST</a>
+                <a class="text-2xl  text-white transition-colors duration-200 transform dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300" href="#">TEST</a>
             </div>
             
             <!-- Mobile menu button -->
@@ -87,8 +86,8 @@
     
         <div class="flex  w-full h-full bg-gray-900 bg-opacity-50">
             <div>
-                <h1 class="topherotext align-bottom text-2xl font-semibold text-white uppercase lg:text-3xl">BMW X4</span></h1>
-                <h2 class="bottomherotext align-bottom text-2xl font-semibold text-white uppercase lg:text-3xl">$110,000 | 05-2016 | 0 miles | 190 kw (255hp)</span></h2>
+                <h1 class="topherotext w-full text-6xl font-semibold text-white uppercase">BMW X4</h1>
+                <h2 class="bottomherotext w-full text-lg text-gray-200 uppercase"><b>$110,000</b> ꞏ 05-2016 ꞏ 0 miles ꞏ 190 kw (255hp)</h2>
             </div>
         </div>
         <div>
@@ -101,7 +100,32 @@
 <br>
 <br>
 <br>
-<section class="max-w-4xl p-6 mx-auto bg-gray-200 rounded-md shadow-md dark:bg-gray-800">
+
+<div id="myBtnContainer">
+    
+    <button  class="inline py-2 px-4  text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid-3x3-gap-fill" viewBox="0 0 16 16">
+            <path d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-2z"/>
+          </svg>
+    </button>
+
+    <button class="inline py-2 px-4  text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+          </svg>
+    </button>
+
+    <select id="inline selectpricing" type="text" class="block w-1/6 px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+        <option value="" disabled selected>Price(low-high)</option>
+        <option value="hurr">Super Baller</option>
+        <option value="hurr">Baller</option>
+        <option value="hurr">Scrub</option>
+    </select>
+
+  </div>
+
+
+<section class="max-w-6xl p-6 mx-auto bg-gray-100 dark:bg-gray-800">
     
     <form>
         <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
@@ -358,24 +382,21 @@
                 </div>
             </div>
 
-            <div class="mt-6 lg:mt-0 lg:flex-1">
-                <div class="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4">
+            <div class="mx-2 mt-6 lg:mt-0 lg:flex-1">
+                <div class="grid  gap-10 sm:grid-cols-3 md:grid-cols-2">
                     <div>
-                        <h3 class="text-white uppercase dark:text-white">About</h3>
-                        <a href="#" class="block mt-2 text-sm text-white dark:text-gray-400 hover:underline">Company</a>
-                        <a href="#" class="block mt-2 text-sm text-white dark:text-gray-400 hover:underline">community</a>
-                        <a href="#" class="block mt-2 text-sm text-white dark:text-gray-400 hover:underline">Careers</a>
-                    </div>
-
-                    <div>
-                        <h3 class="text-white uppercase dark:text-white">Blog</h3>
-                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Tec</a>
-                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Music</a>
-                        <a href="#" class="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">Videos</a>
+                        <h3 class="font-bold text-2xl text-white  dark:text-white">Opening Hours</h3>
+                        <p class="block mt-2 text-sm text-white dark:text-gray-400 hover:underline">Monday ............................................ 9:00 - 18:00</p>
+                        <p class="block mt-2 text-sm text-white dark:text-gray-400 hover:underline">Tuesday ........................................... 9:00 - 18:00</p>
+                        <p class="block mt-2 text-sm text-white dark:text-gray-400 hover:underline">Wednesday ......................................... 9:00 - 18:00</p>
+                        <p class="block mt-2 text-sm text-white dark:text-gray-400 hover:underline">Thursday .......................................... 9:00 - 18:00</p>
+                        <p class="block mt-2 text-sm text-white dark:text-gray-400 hover:underline">Friday ............................................ 9:00 - 18:00</p>
+                        <p class="block mt-2 text-sm text-white dark:text-gray-400 hover:underline">Saturday .......................................... 9:00 - 18:00</p>
+                        <p class="block mt-2 text-sm text-white dark:text-gray-400 hover:underline">Sunday ............................................ 9:00 - 18:00</p>
                     </div>
 
 
-                    <div class="flex items-center justify-center pb-6 md:py-0 md:w-1/2">
+                    <div class="flex pb-6 md:py-0 md:w-1/2">
                         <form>
                             <h3 class="font-bold text-2xl text-white dark:text-white">Get the best deals first</h3>
                             <br>

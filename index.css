@@ -1,3 +1,8 @@
+.inline {
+    vertical-align:middle;
+}
+
+HTML
 .aligned {
     
     bottom: 0;
@@ -7,7 +12,7 @@
 
 .buttontings{
 
-    margin-top: 2%;
+    margin-top: 1.5%;
     vertical-align: bottom;
 }
 
@@ -18,7 +23,7 @@
 }
 
 .topherotext{
-    margin-top: 60%;
+    margin-top: 90%;
     margin-left: 5%;
 }
 
