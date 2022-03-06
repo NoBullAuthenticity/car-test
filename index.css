@@ -1,6 +1,21 @@
 .inline {
     vertical-align:middle;
+    margin-bottom:2%;
 }
+
+.blogdivider{
+    width: 80%;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.profilepic{
+    width: 50px;
+    height: auto;
+    margin-right: 5%;
+}
+
 
 HTML
 .aligned {
@@ -31,6 +46,13 @@ HTML
     background-color: white;
     color: #e63946;
     border: 10px solid #e63946; 
+}
+
+.submiticon{
+    display: inline;
+    position: relative;
+    bottom: 0.05em;
+    font-weight: bold;
 }
 
 .submitbutton:hover {

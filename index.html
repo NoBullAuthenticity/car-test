@@ -5,11 +5,11 @@
 	<meta charset="UTF-8">
 	<title>Cool Car Shop - TEST </title>
 	<!-- THE TITLE element is the name of the page, it is also visible in the browser tab. Its always good practice to give each page an appropriate title. -->
-	<meta name="description" content="A sample SaaS website, nothin fancy">
-      <meta http-equiv="author" content="caveman.eth">
-      <meta name="keywords" content="html, css, web, design, sample, practice">
+	<meta name="description" content="Cool car site">
+    <meta name="keywords" content="html, css, web, design, sample, practice">
       <!-- These are META TAGS, they're used to describe the website, this information is read mainly by search engines like GOOGLE, YAHOO, ETC... -->	
 	<script src="http://localhost:8080/target/target-script-min.js#anonymous"></script>
+    <script src="./toggled-search-bar.js"></script>
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.2.2/dist/full.css" rel="stylesheet" type="text/css" />
     <link href="/index.css" rel="stylesheet" type="text/css" />
@@ -40,26 +40,27 @@
         <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
         <div class="items-center md:flex">
             <div class="flex flex-col md:flex-row md:mx-6">
-                <a href="#" class="mt-2 transition-colors duration-200 transform lg:mt-0 lg:mx-4 text-white hover:text-gray-900 dark:hover:text-gray-200">HOME</a>
-                <a href="#" class="mt-2 transition-colors duration-200 transform lg:mt-0 lg:mx-4 text-white hover:text-gray-900 dark:hover:text-gray-200">FEATURES</a>
-                <a href="#" class="mt-2 transition-colors duration-200 transform lg:mt-0 lg:mx-4 text-white hover:text-gray-900 dark:hover:text-gray-200">PAGES</a>
-                <a href="#" class="mt-2 transition-colors duration-200 transform lg:mt-0 lg:mx-4 text-white hover:text-gray-900 dark:hover:text-gray-200">BLOG</a>
-                <a href="#" class="mt-2 transition-colors duration-200 transform lg:mt-0 lg:mx-4 text-white hover:text-gray-900 dark:hover:text-gray-200">SUPPORT</a>
+                <a href="#" class="font-semibold mt-2 transition-colors duration-200 transform lg:mt-0 lg:mx-4 text-white hover:text-gray-900 dark:hover:text-gray-200">HOME</a>
+                <a href="#" class="font-semibold mt-2 transition-colors duration-200 transform lg:mt-0 lg:mx-4 text-white hover:text-gray-900 dark:hover:text-gray-200">FEATURES</a>
+                <a href="#" class="font-semibold mt-2 transition-colors duration-200 transform lg:mt-0 lg:mx-4 text-white hover:text-gray-900 dark:hover:text-gray-200">PAGES</a>
+                <a href="#" class="font-semibold mt-2 transition-colors duration-200 transform lg:mt-0 lg:mx-4 text-white hover:text-gray-900 dark:hover:text-gray-200">BLOG</a>
+                <a href="#" class="font-semibold mt-2 transition-colors duration-200 transform lg:mt-0 lg:mx-4 text-white hover:text-gray-900 dark:hover:text-gray-200">SUPPORT</a>
             </div>
 
             <div class="flex justify-center md:block">
-                <a href="#" class="mt-2 transition-colors duration-200 transform lg:mt-0 lg:mx-4 text-white hover:text-gray-900 dark:hover:text-gray-200">LOGIN</a>
+                <a href="#" class="mt-2 transition-colors duration-200 transform lg:mt-0 lg:mx-4 text-white hover:text-gray-900 dark:hover:text-gray-200">Login</a>
             </div>
 
             <div class="flex justify-center md:block">
-                <a class="relative text-white transition-colors duration-200 transform dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300" href="#">
+                <a onclick="shownavsearchbar()" class="relative text-white transition-colors duration-200 transform dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300" href="#">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                       </svg>
                 </a>
             </div>
 
-            <div class="relative mt-4 lg:mt-0 lg:mx-4">
+
+            <div id="navsearch" style="display: none" class="relative mt-4 lg:mt-0 lg:mx-4">
                 <span class="absolute inset-y-0 left-0 flex items-center pl-3">
                     <svg class="w-4 h-4 text-gray-600 dark:text-gray-300" viewBox="0 0 24 24" fill="none">
                         <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -100,31 +101,6 @@
 <br>
 <br>
 <br>
-
-<div id="myBtnContainer">
-    
-    <button  class="inline py-2 px-4  text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid-3x3-gap-fill" viewBox="0 0 16 16">
-            <path d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-2z"/>
-          </svg>
-    </button>
-
-    <button class="inline py-2 px-4  text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-          </svg>
-    </button>
-
-    <select id="inline selectpricing" type="text" class="block w-1/6 px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
-        <option value="" disabled selected>Price(low-high)</option>
-        <option value="hurr">Super Baller</option>
-        <option value="hurr">Baller</option>
-        <option value="hurr">Scrub</option>
-    </select>
-
-  </div>
-
-
 <section class="max-w-6xl p-6 mx-auto bg-gray-100 dark:bg-gray-800">
     
     <form>
@@ -169,7 +145,7 @@
             </div>   
     
             <div>
-                <button style="background-color:#e63946 " class="buttontings w-full py-2 text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Show results</button>
+                <button style="background-color:#e63946 " class="buttontings w-full py-2 text-white font-semibold transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">SHOW RESULTS</button>
             </div>
 
         </div>
@@ -182,61 +158,95 @@
   <br>
   <br>
   <br>
-  <section class="p-6 dark:bg-cool Gray-800 dark:text-coolGray-100">
+
+  <div id="myBtnContainer" class="flex justify-end">
+    
+    <button  class="inline py-2 px-4  text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid-3x3-gap-fill" viewBox="0 0 16 16">
+            <path d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-2z"/>
+          </svg>
+    </button>
+
+    <button class="inline py-2 px-4  text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+          </svg>
+    </button>
+
+    <select id="selectpricing" type="text" class="inline block w-1/6 px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+        <option value="" disabled selected>Price(low-high)</option>
+        <option value="hurr">Super Baller</option>
+        <option value="hurr">Baller</option>
+        <option value="hurr">Scrub</option>
+    </select>
+
+  </div>
+
+  <section class="p-6 ">
 	<div class="container mx-auto grid justify-center grid-cols-2 text-center lg:grid-cols-3">
         
-    <div class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
-        <div class="px-4 py-2">
-            <h1 class="text-3xl font-bold text-gray-800 uppercase dark:text-white">50 years of pony-car style</h1>
-            <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos quidem sequi illum facere recusandae voluptatibus</p>
-        </div>
-
-        <img class="object-cover w-full h-48 mt-2" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=320&q=80" alt="NIKE AIR">
-
-        <div class="flex items-center justify-between px-4 py-2 bg-gray-900">
-            <h1 class="text-lg font-bold text-white">$129</h1>
-            <button class="px-2 py-1 text-xs font-semibold text-gray-900 uppercase transition-colors duration-200 transform bg-white rounded hover:bg-gray-200 focus:bg-gray-400 focus:outline-none">Add to cart</button>
-        </div>
-    </div>
+        <div class="max-w-xs mx-auto justify-center overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+            <img class="rounded object-cover w-full h-48 mt-2" src="https://hips.hearstapps.com/hmg-prod/images/2022-ford-mustang-shelby-gt500-02-1636734552.jpg" alt="2022-ford-mustang-shelby-gt500-02-1636734552">
+            
+            <div class="px-4 py-2">
+                <h1 class="text-xl font-bold text-gray-800 uppercase dark:text-white">Volkswagen Golf 2.5l</h1>
+            </div>
+            <div class="flex items-center justify-start px-4 py-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-date" viewBox="0 0 16 16">
+                    <path d="M6.445 11.688V6.354h-.633A12.6 12.6 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z"/>
+                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                  </svg>
+                <h1 class="text-md text-gray-500">07-2015</h1>
+            </div>
+            <div class="flex items-center justify-start px-4 py-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-speedometer2" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4zM3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.389.389 0 0 0-.029-.518z"/>
+                    <path fill-rule="evenodd" d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A7.988 7.988 0 0 1 0 10zm8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3z"/>
+                  </svg>
+                <h1 class="text-md text-gray-500">30,000</h1>
+            </div>
+            <div class="flex items-center justify-start px-4 py-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-activity" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2Z"/>
+                </svg>
+                <h1 class="text-md text-gray-500">130 kw</h1>
+            </div>
+        </div>    
 
     
-    <div class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
-        <div class="px-4 py-2">
-            <h1 class="text-3xl font-bold text-gray-800 uppercase dark:text-white">Because 600 hp is not enough</h1>
-            <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos quidem sequi illum facere recusandae voluptatibus</p>
-        </div>
-
-        <img class="object-cover w-full h-48 mt-2" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=320&q=80" alt="NIKE AIR">
-
-        <div class="flex items-center justify-between px-4 py-2 bg-gray-900">
-            <h1 class="text-lg font-bold text-white">$129</h1>
-            <button class="px-2 py-1 text-xs font-semibold text-gray-900 uppercase transition-colors duration-200 transform bg-white rounded hover:bg-gray-200 focus:bg-gray-400 focus:outline-none">Add to cart</button>
-        </div>
-    </div>    
+        <div class="max-w-xs mx-auto justify-center overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+            <img class="rounded object-cover w-full h-48 mt-2" src="https://hips.hearstapps.com/hmg-prod/images/2022-ford-mustang-shelby-gt500-02-1636734552.jpg" alt="2022-ford-mustang-shelby-gt500-02-1636734552">
+            
+            <div class="px-4 py-2">
+                <h1 class="text-xl font-bold text-gray-800 uppercase dark:text-white">Because 600 hp is not enough</h1>
+                <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos quidem sequi illum facere recusandae voluptatibus</p>
+            </div>
+            <hr class="blogdivider">
+            <div class="flex items-center justify-center px-4 py-2">
+                <img class="rounded-full profilepic" src="https://nakedsecurity.sophos.com/wp-content/uploads/sites/2/2013/08/facebook-silhouette_thumb.jpg" alt="profile-pic">
+                <h1 class="text-lg font-bold text-gray-500">by John Doe</h1>
+            </div>
+        </div>    
     
-    <div class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
-        <div class="px-4 py-2">
-            <h1 class="text-3xl font-bold text-gray-800 uppercase dark:text-white">Because 600 hp is not enough</h1>
-            <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos quidem sequi illum facere recusandae voluptatibus</p>
-        </div>
-
-        <img class="object-cover w-full h-48 mt-2" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=320&q=80" alt="NIKE AIR">
-
-        <div class="flex items-center justify-between px-4 py-2 bg-gray-900">
-            <h1 class="text-lg font-bold text-white">$129</h1>
-            <button class="px-2 py-1 text-xs font-semibold text-gray-900 uppercase transition-colors duration-200 transform bg-white rounded hover:bg-gray-200 focus:bg-gray-400 focus:outline-none">Add to cart</button>
-        </div>
-    </div>  
+        <div class="max-w-xs mx-auto justify-center overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+            <img class="rounded object-cover w-full h-48 mt-2" src="https://hips.hearstapps.com/hmg-prod/images/2022-ford-mustang-shelby-gt500-02-1636734552.jpg" alt="2022-ford-mustang-shelby-gt500-02-1636734552">
+            
+            <div class="px-4 py-2">
+                <h1 class="text-xl font-bold text-gray-800 uppercase dark:text-white">Because 600 hp is not enough</h1>
+                <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos quidem sequi illum facere recusandae voluptatibus</p>
+            </div>
+            <hr class="blogdivider">
+            <div class="flex items-center justify-center px-4 py-2">
+                <img class="rounded-full profilepic" src="https://nakedsecurity.sophos.com/wp-content/uploads/sites/2/2013/08/facebook-silhouette_thumb.jpg" alt="profile-pic">
+                <h1 class="text-lg font-bold text-gray-500">by John Doe</h1>
+            </div>
+        </div>    
     
 	</div>
 
    <br>
     <div class="grid place-items-center">
     <div class="flex">
-        <a href="#" class="flex items-center px-4 py-2 mx-1 text-gray-500 bg-white rounded-md cursor-not-allowed dark:bg-gray-900 dark:text-gray-600">
-            previous
-        </a>
-
         <a href="#" class="items-center hidden px-4 py-2 mx-1 text-gray-700 transition-colors duration-200 transform bg-white rounded-md sm:flex dark:bg-gray-900 dark:text-gray-200 hover:bg-blue-600 dark:hover:bg-blue-500 hover:text-white dark:hover:text-gray-200">
             1
         </a>
@@ -245,12 +255,10 @@
             2
         </a>
 
-        <a href="#" class="items-center hidden px-4 py-2 mx-1 text-gray-700 transition-colors duration-200 transform bg-white rounded-md sm:flex dark:bg-gray-900 dark:text-gray-200 hover:bg-blue-600 dark:hover:bg-blue-500 hover:text-white dark:hover:text-gray-200">
-            3
-        </a>
-
         <a href="#" class="flex items-center px-4 py-2 mx-1 text-gray-700 transition-colors duration-200 transform bg-white rounded-md dark:bg-gray-900 dark:text-gray-200 hover:bg-blue-600 dark:hover:bg-blue-500 hover:text-white dark:hover:text-gray-200">
-            Next
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+              </svg>
         </a>
     </div>
     </div>
@@ -286,33 +294,41 @@
   <br>
   <br>
   <br>
+  
+  <div class="container mx-auto grid justify-center">
+    <h1 class="font-bold text-gray-800 text-2xl">
+        Latest Car News
+    </h1>
+    <br>
+  </div>
+
   <div class="container mx-auto grid justify-center grid-cols-2 text-center lg:grid-cols-2">
-            
+        
     <div class="max-w-xs mx-auto justify-center overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+        <img class="rounded object-cover w-full h-48 mt-2" src="https://hips.hearstapps.com/hmg-prod/images/2022-ford-mustang-shelby-gt500-02-1636734552.jpg" alt="2022-ford-mustang-shelby-gt500-02-1636734552">
+        
         <div class="px-4 py-2">
-            <h1 class="text-3xl font-bold text-gray-800 uppercase dark:text-white">Because 600 hp is not enough</h1>
+            <h1 class="text-xl font-bold text-gray-800 uppercase dark:text-white">Because 600 hp is not enough</h1>
             <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos quidem sequi illum facere recusandae voluptatibus</p>
         </div>
-
-        <img class="object-cover w-full h-48 mt-2" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=320&q=80" alt="NIKE AIR">
-
-        <div class="flex items-center justify-between px-4 py-2 bg-gray-900">
-            <h1 class="text-lg font-bold text-white">$129</h1>
-            <button class="px-2 py-1 text-xs font-semibold text-gray-900 uppercase transition-colors duration-200 transform bg-white rounded hover:bg-gray-200 focus:bg-gray-400 focus:outline-none">Add to cart</button>
+        <hr class="blogdivider">
+        <div class="flex items-center justify-center px-4 py-2">
+            <img class="rounded-full profilepic" src="https://nakedsecurity.sophos.com/wp-content/uploads/sites/2/2013/08/facebook-silhouette_thumb.jpg" alt="profile-pic">
+            <h1 class="text-lg font-bold text-gray-500">by John Doe</h1>
         </div>
     </div>    
     
     <div class="max-w-xs mx-auto justify-center overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+        <img class="rounded object-cover w-full h-48 mt-2" src="https://hips.hearstapps.com/hmg-prod/images/2022-ford-mustang-shelby-gt500-02-1636734552.jpg" alt="2022-ford-mustang-shelby-gt500-02-1636734552">
+        
         <div class="px-4 py-2">
-            <h1 class="text-3xl font-bold text-gray-800 uppercase dark:text-white">Because 600 hp is not enough</h1>
+            <h1 class="text-xl font-bold text-gray-800 uppercase dark:text-white">Because 600 hp is not enough</h1>
             <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos quidem sequi illum facere recusandae voluptatibus</p>
         </div>
-
-        <img class="object-cover w-full h-48 mt-2" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=320&q=80" alt="NIKE AIR">
-
-        <div class="flex items-center justify-between px-4 py-2 bg-gray-900">
-            <h1 class="text-lg font-bold text-white">$129</h1>
-            <button class="px-2 py-1 text-xs font-semibold text-gray-900 uppercase transition-colors duration-200 transform bg-white rounded hover:bg-gray-200 focus:bg-gray-400 focus:outline-none">Add to cart</button>
+        <hr class="blogdivider">
+        <div class="flex items-center justify-center px-4 py-2">
+            <img class="rounded-full profilepic" src="https://nakedsecurity.sophos.com/wp-content/uploads/sites/2/2013/08/facebook-silhouette_thumb.jpg" alt="profile-pic">
+            <h1 class="text-lg font-bold text-gray-500">by John Doe</h1>
         </div>
     </div>  
     
@@ -324,9 +340,16 @@
     <br>
     <div class="flex items-center">
         <div class="m-auto">
-        <button class="submitbutton bg-transparent font-semibold hover:text-white py-2 px-4 border hover:border-transparent rounded">
-        Submit your vehicle
+        <button class="submitbutton bg-transparent font-bold hover:text-white py-2 px-8 border hover:border-transparent rounded">
+        SUBMIT YOUR VEHICLE
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="submiticon bi bi-arrow-right font-bold" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+          </svg>
       </button>
+    <br>
+    <br>
+    <br>
+    <br>
     <br>
     <br>
     </div>
@@ -403,7 +426,7 @@
                             <div class="flex flex-col p-1 overflow-hidden lg:flex-row dark:focus-within:border-blue-300 focus-within:ring focus-within:ring-opacity-40 focus-within:border-blue-400 focus-within:ring-blue-300">
                                 <input class="px-6 py-2 text-gray-700 placeholder-gray-500 bg-white outline-none dark:bg-gray-800 dark:placeholder-gray-400 focus:placeholder-transparent dark:focus:placeholder-transparent" type="text" name="email" placeholder="Enter your email" aria-label="Enter your email">
                                 
-                                <button style="background-color: #e63946" class="px-4 py-3 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-200 transform bg-gray-700 rounded-lg hover:bg-gray-600 focus:bg-gray-600 focus:outline-none">subscribe</button>
+                                <button style="background-color: #e63946" class="px-4 py-3 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-200 transform bg-gray-700 rounded hover:bg-gray-600 focus:bg-gray-600 focus:outline-none">subscribe</button>
                             </div>
                             <br>
                             <h3 class="text-white">No worries we don't spam, promise.</h3>
